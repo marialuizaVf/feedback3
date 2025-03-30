@@ -1,4 +1,5 @@
 import { useState } from "react"
+import illustrationThankYou from "./images/illustration-thank-you.svg"
 import iconStar from "./images/icon-star.svg"
 
 export function App(){
@@ -12,7 +13,12 @@ export function App(){
   }
 
   function handleSubmit(){
-    setSubmited(true)
+    if (notaAvaliacao !== 0){
+      setSubmited(true)
+      return
+    }
+
+    alert("Please, choose a rate button!")
 
   }
 
@@ -31,11 +37,11 @@ export function App(){
           </p>
   
           <div className="flex justify-between mb-6">
-            <input type="button" value={1} className="w-10.5 h-10.5 bg-dark-blue rounded-full text-sm leading-2 text-medium-grey" onClick={() => handleAlterarNotaAvaliacao(1)} />
-            <input type="button" value={2} className="w-10.5 h-10.5 bg-dark-blue rounded-full text-sm leading-2 text-medium-grey" onClick={() => handleAlterarNotaAvaliacao(2)} />
-            <input type="button" value={3} className="w-10.5 h-10.5 bg-dark-blue rounded-full text-sm leading-2 text-medium-grey" onClick={() => handleAlterarNotaAvaliacao(3)} />
-            <input type="button" value={4} className="w-10.5 h-10.5 bg-dark-blue rounded-full text-sm leading-2 text-medium-grey" onClick={() => handleAlterarNotaAvaliacao(4)} />
-            <input type="button" value={5} className="w-10.5 h-10.5 bg-dark-blue rounded-full text-sm leading-2 text-medium-grey" onClick={() => handleAlterarNotaAvaliacao(5)} />
+            <input type="button" value={1} className="w-10.5 h-10.5 bg-dark-blue rounded-full text-sm leading-2 text-medium-grey focus:bg-medium-grey focus: text-white" onClick={() => handleAlterarNotaAvaliacao(1)} />
+            <input type="button" value={2} className="w-10.5 h-10.5 bg-dark-blue rounded-full text-sm leading-2 text-medium-grey focus:bg-medium-grey focus: text-white" onClick={() => handleAlterarNotaAvaliacao(2)} />
+            <input type="button" value={3} className="w-10.5 h-10.5 bg-dark-blue rounded-full text-sm leading-2 text-medium-grey focus:bg-medium-grey focus: text-white" onClick={() => handleAlterarNotaAvaliacao(3)} />
+            <input type="button" value={4} className="w-10.5 h-10.5 bg-dark-blue rounded-full text-sm leading-2 text-medium-grey focus:bg-medium-grey focus: text-white" onClick={() => handleAlterarNotaAvaliacao(4)} />
+            <input type="button" value={5} className="w-10.5 h-10.5 bg-dark-blue rounded-full text-sm leading-2 text-medium-grey focus:bg-medium-grey focus: text-white" onClick={() => handleAlterarNotaAvaliacao(5)} />
           </div>
   
           <button className="bg-orange w-full py-3 uppercase text-sm rounded-3xl tracking-1 font-bold" onClick={handleSubmit}>
@@ -43,8 +49,10 @@ export function App(){
           </button>
         </>
       ) : (
-        <p>Outro código</p>
+        <div className="bg-gradient-dark mx-6 p-6 rounded-2xl text-white font-overpass text-center">
+         <img className="mx-auto mb-6" src={illustrationThankYou} alt="ilustration Thank You" />
+         </div>
       )}
     </div>
-  );
+  )
 }
