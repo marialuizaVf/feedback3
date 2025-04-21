@@ -1,7 +1,7 @@
 import iconStar from "../images/icon-star.svg"
  import { InputButton } from "./InputButton"
  
- export function CardInicial({setNotaAvaliacao, notaAvaliacao, setSubmited}) {
+ export function CardInicial({ setNotaAvaliacao, notaAvaliacao, setSubmited}) {
      
      function handleSubmite() {
          if (notaAvaliacao !== 0) {
@@ -23,11 +23,11 @@ import iconStar from "../images/icon-star.svg"
              <p className="text-sm text-light-grey mb-6 leading-1">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
  
              <div className="flex justify-between mb-6">
-                 < InputButton value={1} setNotaAvaliacao={notaAvaliacao} />
-                 < InputButton value={2} setNotaAvaliacao={notaAvaliacao} />
-                 < InputButton value={3} setNotaAvaliacao={notaAvaliacao} />
-                 < InputButton value={4} setNotaAvaliacao={notaAvaliacao} />
-                 < InputButton value={5} setNotaAvaliacao={notaAvaliacao} />
+             < InputButton value={1} setNotaAvaliacao={setNotaAvaliacao} />
+                 < InputButton value={2} setNotaAvaliacao={setNotaAvaliacao} />
+                 < InputButton value={3} setNotaAvaliacao={setNotaAvaliacao} />
+                 < InputButton value={4} setNotaAvaliacao={setNotaAvaliacao} />
+                 < InputButton value={5} setNotaAvaliacao={setNotaAvaliacao} />
  
              </div>
  
